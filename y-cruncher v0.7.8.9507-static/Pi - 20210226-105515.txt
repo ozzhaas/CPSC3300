@@ -1,0 +1,147 @@
+﻿Benchmark Validation File - DO NOT MODIFY! If you do, it will fail validation.
+
+Validation Version:    1.3
+
+Program:               y-cruncher v0.7.8 Build 9507
+Tuning:                13-HSW ~ Airi
+
+User:                  None Specified - You can edit this in "Username.txt".
+
+Operating System:      Linux 5.4.0-65-generic x86_64
+
+Processor(s):
+    Name:              Intel(R) Core(TM) i7-4790 CPU @ 3.60GHz
+    Logical Cores:     8
+    Physical Cores:    4
+    Sockets:           1
+    NUMA Nodes:        1
+    Base Frequency:    3,591,638,448 Hz
+
+Motherboard:
+    Manufacturer:      Dell Inc.
+    Model:             0N4YC8
+    Version:           A00
+    Serial Number:     Suppressed - Personally identifiable information is opt-in only.
+
+Memory:
+    Usable Memory:     33,613,623,296 (31.3 GiB)
+    Total Memory:      Unable to Detect
+
+Constant:              Pi
+Algorithm:             Chudnovsky (1988)
+Decimal Digits:        50,000,000
+Hexadecimal Digits:    41,524,102
+Computation Mode:      Ram Only
+Threading Mode:        Push Pool  ->  1 / ?  (randomization on)
+Working Memory:        240,196,480 ( 229 MiB)
+Total Memory:          419,326,080 ( 400 MiB)
+
+Configuration Dump:
+{
+    Constant : {
+        Constant : "pi"
+        Algorithm : "chudnovsky"
+    }
+    ComputeSize : {
+        DecimalDigits : 50000000
+        EnableHexDigits : "true"
+    }
+    Output : {
+        Path : ""
+        OutputEnable : "true"
+        DigitsPerFile : 0
+    }
+    OutputVerify : "true"
+    Mode : "ram"
+    Parallelism : {
+        TaskDecomposition : 1
+        Framework : "pushpool"
+        WorkerThreads : 0
+        Randomization : "true"
+        MaxSequentialDispatch : 64
+    }
+    Allocator : {
+        Allocator : "mmap"
+        LargePages : "attempt"
+        LockedPages : "attempt"
+    }
+}
+
+Start Date:            Fri Feb 26 10:54:56 2021
+End Date:              Fri Feb 26 10:55:14 2021
+
+Total Computation Time:    15.622 seconds
+Start-to-End Wall Time:    17.982 seconds
+
+CPU Utilization:           99.99 %  +  0.06 % kernel overhead
+Multi-core Efficiency:     12.50 %  +  0.01 % kernel overhead
+
+Last Decimal Digits:
+4127897300 0153683630 8346732220 0943329365 1632962502  :  49,999,950
+5130045796 0464561703 2424263071 4554183801 7945652654  :  50,000,000
+
+Last Hexadecimal Digits:
+996b288dad fdb8a23253 6a3d14ac29 8b6a4fe76a 0c51b2dad6  :  41,524,100
+45
+
+SHA256-dec(50,000,001 - 50,000,100): a9f72907e1930411c4479c59df3a8a1e7c9f48473d627e0ff7f4a78201456d27
+
+Dec Counts: {4999632,5002220,5000573,4998630,5004009,4999797,4998017,4998895,4998494,4999733}
+Hex Counts: {2596560,2593744,2598002,2594785,2594195,2596355,2596110,2596422,2596140,2591632,2593256,2596216,2595372,2595897,2595437,2593979}
+
+Dec Hash: Floor(|x| * 10^dec) mod (2^61 - 1) = 1230216683583080642
+Hex Hash: Floor(|x| * 16^hex) mod (2^61 - 1) = 2077534895382569068
+
+Spot Check:                 Good through 50,000,000
+Timer Sanity Check:         Passed
+Frequency Sanity Check:     Disabled in this version of y-cruncher
+Reference Clock:            TSC
+Reference Clock 0:          0
+Reference Clock 1:          164,508,393
+Reference Clock 2:          18,497,552
+Is Debugger Present:        Unknown
+Is Contiguous:              Yes
+ECC Recovered Errors:       0
+Colors:                     Yes
+
+Event Log:
+Fri Feb 26 10:54:56 2021	0.001	Working Memory
+Fri Feb 26 10:54:57 2021	0.061	Working Memory:  230 MiB  (spread: ?)
+Fri Feb 26 10:54:57 2021	0.061	Twiddle Tables
+Fri Feb 26 10:54:57 2021	0.146	Twiddle Tables:  171 MiB  (spread: ?)
+Fri Feb 26 10:54:57 2021	0.146	Begin Computation
+Fri Feb 26 10:54:57 2021	0.146	Series CommonP2B3...  3,525,695 terms  (Expansion Factor = 2.424)
+Fri Feb 26 10:54:57 2021	0.146	Series: A ( 16 ) 0.000%
+Fri Feb 26 10:54:57 2021	0.150	Series: A ( 15 ) 0.095%
+Fri Feb 26 10:54:57 2021	0.171	Series: A ( 14 ) 0.472%
+Fri Feb 26 10:54:57 2021	0.196	Series: E ( 13 ) 0.848%
+Fri Feb 26 10:54:57 2021	0.223	Series: E ( 12 ) 1.225%
+Fri Feb 26 10:54:57 2021	0.260	Series: E ( 11 ) 1.712%
+Fri Feb 26 10:54:57 2021	0.316	Series: E ( 10 ) 2.392%
+Fri Feb 26 10:54:57 2021	0.405	Series: E ( 9 ) 3.344%
+Fri Feb 26 10:54:57 2021	0.527	Series: E ( 8 ) 4.676%
+Fri Feb 26 10:54:57 2021	0.706	Series: E ( 7 ) 6.538%
+Fri Feb 26 10:54:57 2021	0.981	Series: E ( 6 ) 9.144%
+Fri Feb 26 10:54:58 2021	1.370	Series: E ( 5 ) 12.794%
+Fri Feb 26 10:54:58 2021	1.995	Series: E ( 4 ) 17.911%
+Fri Feb 26 10:54:59 2021	2.838	Series: E ( 3 ) 25.093%
+Fri Feb 26 10:55:01 2021	4.169	Series: E ( 2 ) 35.199%
+Fri Feb 26 10:55:03 2021	6.061	Series: E ( 1 ) 49.478%
+Fri Feb 26 10:55:05 2021	8.916	Series: E ( 0 ) 69.825%
+Fri Feb 26 10:55:09 2021	13.001	Finishing Series
+Fri Feb 26 10:55:09 2021	13.015	Large Division
+Fri Feb 26 10:55:10 2021	13.751	InvSqrt(10005)...
+Fri Feb 26 10:55:11 2021	14.199	Large Multiply
+Fri Feb 26 10:55:11 2021	14.543	Writing Hexadecimal Digits
+Fri Feb 26 10:55:11 2021	14.950	Base Converting
+Fri Feb 26 10:55:13 2021	16.175	Writing Decimal Digits
+Fri Feb 26 10:55:13 2021	16.685	Verifying Base Conversion
+Fri Feb 26 10:55:14 2021	17.163	Verifying Binary Output
+Fri Feb 26 10:55:14 2021	17.164	Verifying Decimal Output
+Fri Feb 26 10:55:14 2021	17.611	Verifying Hexadecimal Output
+Fri Feb 26 10:55:14 2021	17.983	End Computation
+
+----
+
+Checksum0: 5138df46b0c8e714ff01d4b23fe333834119388ee75fa8368863f67bd6013d8bc60c02adcacdb1d5036e1d711b5a28d9f5c9339bf4f8bc864c15f04e72bcc595
+Checksum1: 957353a1c0286040ae830af908252ac284978b56be5c2dccddfe561991b13724122bbdac0b9b4677b05cf9498abee579e2e7feedc3235c6018f26d47d47951ac
