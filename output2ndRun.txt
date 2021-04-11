@@ -1,0 +1,152 @@
+
+
+Script started on 2021-04-11 01:32:38-04:00
+
+ozzhaas@hp-envyx360:~/Desktop/CPSC3300$ make all
+gcc -Wall -O0 -o whetstoneBaseCase whetstone.c -lm
+gcc -Wall -fschedule-fusion -O1 -o whetstoneOne whetstone.c -lm
+gcc -Wall -funroll-loops -O1 -o whetstoneTwo whetstone.c -lm
+gcc -Wall -fpeel-loops -O1 -o whetstoneThree whetstone.c -lm
+gcc -Wall -O3 -o whetstoneFour whetstone.c -lm
+
+
+
+ozzhaas@hp-envyx360:~/Desktop/CPSC3300$ ./myscript.sh
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Starting base case test...
+
+Loops: 200000, Iterations: 1, Duration: 3 sec.
+C Converted Double Precision Whetstones: 6666.7 MIPS
+
+ Performance counter stats for './whetstoneBaseCase 200000':
+
+          2,583.36 msec task-clock                #    1.000 CPUs utilized
+                15      context-switches          #    0.006 K/sec
+                 0      cpu-migrations            #    0.000 K/sec
+                78      page-faults               #    0.030 K/sec
+    11,004,657,283      cycles                    #    4.260 GHz
+    23,233,745,266      instructions              #    2.11  insn per cycle
+     2,335,914,737      branches                  #  904.217 M/sec
+            51,373      branch-misses             #    0.00% of all branches
+
+       2.583675952 seconds time elapsed
+
+       2.583650000 seconds user
+       0.000000000 seconds sys
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Starting loop fusion...
+
+Loops: 200000, Iterations: 1, Duration: 1 sec.
+C Converted Double Precision Whetstones: 20000.0 MIPS
+
+ Performance counter stats for './whetstoneOne 200000':
+
+          1,461.21 msec task-clock                #    1.000 CPUs utilized
+                37      context-switches          #    0.025 K/sec
+                 0      cpu-migrations            #    0.000 K/sec
+                74      page-faults               #    0.051 K/sec
+     6,326,320,692      cycles                    #    4.330 GHz
+     9,674,900,457      instructions              #    1.53  insn per cycle
+     1,514,142,859      branches                  # 1036.223 M/sec
+            17,469      branch-misses             #    0.00% of all branches
+
+       1.461613131 seconds time elapsed
+
+       1.461433000 seconds user
+       0.000000000 seconds sys
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Starting loop unrolling...
+
+Loops: 200000, Iterations: 1, Duration: 2 sec.
+C Converted Double Precision Whetstones: 10000.0 MIPS
+
+ Performance counter stats for './whetstoneTwo 200000':
+
+          1,396.84 msec task-clock                #    1.000 CPUs utilized
+                 5      context-switches          #    0.004 K/sec
+                 0      cpu-migrations            #    0.000 K/sec
+                75      page-faults               #    0.054 K/sec
+     6,054,189,319      cycles                    #    4.334 GHz
+     8,278,024,876      instructions              #    1.37  insn per cycle
+     1,074,767,380      branches                  #  769.425 M/sec
+            15,037      branch-misses             #    0.00% of all branches
+
+       1.397043489 seconds time elapsed
+
+       1.397046000 seconds user
+       0.000000000 seconds sys
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Starting loop peeling...
+
+Loops: 200000, Iterations: 1, Duration: 1 sec.
+C Converted Double Precision Whetstones: 20000.0 MIPS
+
+ Performance counter stats for './whetstoneThree 200000':
+
+          1,467.79 msec task-clock                #    1.000 CPUs utilized
+                25      context-switches          #    0.017 K/sec
+                 1      cpu-migrations            #    0.001 K/sec
+                72      page-faults               #    0.049 K/sec
+     6,325,521,523      cycles                    #    4.310 GHz
+     9,674,775,567      instructions              #    1.53  insn per cycle
+     1,514,115,882      branches                  # 1031.563 M/sec
+            16,528      branch-misses             #    0.00% of all branches
+
+       1.468068771 seconds time elapsed
+
+       1.463992000 seconds user
+       0.003999000 seconds sys
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Starting all three optimizations...
+
+Loops: 200000, Iterations: 1, Duration: 1 sec.
+C Converted Double Precision Whetstones: 20000.0 MIPS
+
+ Performance counter stats for './whetstoneFour 200000':
+
+            768.59 msec task-clock                #    1.000 CPUs utilized
+                20      context-switches          #    0.026 K/sec
+                 0      cpu-migrations            #    0.000 K/sec
+                71      page-faults               #    0.092 K/sec
+     3,337,354,269      cycles                    #    4.342 GHz
+     3,366,594,203      instructions              #    1.01  insn per cycle
+       519,379,550      branches                  #  675.757 M/sec
+            13,218      branch-misses             #    0.00% of all branches
+
+       0.768867398 seconds time elapsed
+
+       0.768761000 seconds user
+       0.000000000 seconds sys
+
+
+All done!
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+ozzhaas@hp-envyx360:~/Desktop/CPSC3300$ exit
+
+
+Script done on 2021-04-11 01:33:07-04:00 [COMMAND_EXIT_CODE="0"]
